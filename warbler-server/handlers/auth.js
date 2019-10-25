@@ -25,9 +25,9 @@ try {
 		token
 	});
 	} else {
-	return next({
-		status: 400,
-		message: "Invalid Email/Password."
+		return next({
+			status: 400,
+			message: "Invalid Email/Password."
 		});
 	}
 } catch(e){
