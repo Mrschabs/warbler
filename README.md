@@ -21,6 +21,7 @@ Install the dependencies
 ```bash
 $ npm install
 ```
+Ensure Mongodb is install and running.
 
 Start server
 
