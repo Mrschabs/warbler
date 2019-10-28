@@ -2,15 +2,28 @@
 
 ### Server Local Setup
 
+The server lives in the warbler-server directory of this repo
+
 ```bash
 $ cd warbler-server
-cp sample.env .env
+```
+
+Make a copy of the `sample.env`
+
+```bash
+$ cp sample.env .env
 ```
 
 Now fill in the `.env` file with your secrets
 
-Install the following packages:
-$npm install express becrypt body-parser mongoose jsonwebtoken cors
+Install the dependencies
 
-Start server by running
-$node index.js
+```bash
+$ npm install
+```
+
+Start server
+
+```bash
+$ node index.js
+```
