@@ -26,8 +26,7 @@ messageSchema.pre('remove', async function(next){
   } catch(e) {
     return next(err);
   }
-  
-})
+});
 
 const Message = mongoose.model('Message', messageSchema)
 module.exports = Message;
