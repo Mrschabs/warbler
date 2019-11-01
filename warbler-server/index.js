@@ -14,16 +14,21 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messagesRoutes);
+app.use(
+  "/api/users/:id/messages",
+  loginRequired,
+  ensureCorrectUser,
+  messagesRoutes
+);
 
-app.use(function(req, res, next){
-	let err = new Error("Not Found");
-	err.status = 404;
-	next(err);
+app.use(function(req, res, next) {
+  let err = new Error("Not Found");
+  err.status = 404;
+  next(err);
 });
 
 app.use(errorHandler);
 
-app.listen(PORT, function(){
-	console.log(`Server is starting on port ${PORT}`);
+app.listen(PORT, function() {
+  console.log(`Server is starting on port ${PORT}`);
 });
