@@ -29,7 +29,7 @@ Start server
 $ node index.js
 ```
 
-###Front end
+Front end
 ```bash
 $ create-react-app warbler-client
 ```
