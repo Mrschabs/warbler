@@ -28,3 +28,12 @@ Start server
 ```bash
 $ node index.js
 ```
+
+Front end
+```bash
+$ create-react-app warbler-client
+```
+Install dependecies
+```bash
+$ npm install axios jwt-decode moment react-moment react-redux react-router-dom redux redux-thunk
+```
