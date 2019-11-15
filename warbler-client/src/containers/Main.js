@@ -20,10 +20,15 @@ const Main = props => {
         />
         <Route 
           exact 
-          path="/signin" 
+          path="/signup" 
           render={props => {
             return(
-              <AuthForm buttonText="Sign me up!" heading="Join Warbler Today." {...props}/>
+              <AuthForm 
+                signUp
+                buttonText="Sign me up!" 
+                heading="Join Warbler Today." 
+                {...props}
+              />
             );
           }}
         />
