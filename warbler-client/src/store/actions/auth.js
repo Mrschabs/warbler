@@ -11,9 +11,12 @@ export function setCurrentUser(user){
 export function authUser(type, userData){
   return dispatch => {
     return new Promise((resolve, reject) => {
-      return apiCall("post", 'api/auth/${type}', userData).then(({token, ...user})
-        localStorage.setItem("jwtToken", token)
+      return apiCall("post", `/api/auth/${type}`, userData)
+        .then(({ token, ...user}) => {
+        localStorage.setItem("jwtToken", token);
+        dispatch(setCurrentUser(user));
+        resolve();
       });
-    })
-  }
+    });
+  };
 }
