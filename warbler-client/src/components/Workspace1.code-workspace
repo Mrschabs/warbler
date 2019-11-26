@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "C:\\Users\\Romano\\warbler"
+		}
+	],
+	"settings": {
+		"emmet.includeLanguages": {
+			"javascript": "javascriptreact"
+		}
+	}
+}
