@@ -7,4 +7,6 @@ const message = (state= [], action) => {
     default:
       return state;
   }
-}; 
+};
+
+export default message;
