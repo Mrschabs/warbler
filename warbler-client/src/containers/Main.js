@@ -48,7 +48,7 @@ const Main = props => {
         />
         <Route 
           path="/users/:id/messages/new" 
-          component={withAuth(Messageform)} 
+          component={withAuth(MessageForm)} 
         />
       </Switch>
     </div>

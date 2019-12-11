@@ -20,9 +20,9 @@ export const fetchMessages = () => {
   };
 
   export const postNewMessage = text => (dispatch, getState) => {
-    let { currentUser } = getState()
+    let { currentUser } = getState();
     const id = currentUser.user.id;
-    return apiCall("post", `/api/user/${id}/messages`, { text })
+    return apiCall("post", `/api/users/${id}/messages`, { text })
       .then(res => {})
       .catch(err => {
         dispatch(addError(err.message));

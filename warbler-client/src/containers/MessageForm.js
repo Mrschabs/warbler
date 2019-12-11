@@ -4,7 +4,7 @@ import {postNewMessage} from "../store/actions/messages";
 
 class MessageForm extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       message: ""
     };
@@ -12,28 +12,24 @@ class MessageForm extends Component {
 
   handleNewMessage = event => {
     event.preventDefault();
-    //come back to this in a second
-  };
-}
-
-function mapStateToProps(state){
-  return {
-    errors: state.errors
+    this.props.postNewMessage(this.state.message);
+    this.setState({ message: "" });
+    this.props.history.push("/");
   };
 
   render() {
     return (
       <form onSubmit={this.handleNewMessage}>
-        {this.props.errors && (
-          <div className="alert alert-danger">{this.props.errors}</div>
+        {this.props.errors.message && (
+          <div className="alert alert-danger">{this.props.errors.message}</div>
         )}
-        <input 
-          type="text" 
-          className="form-control" 
+        <input
+          type="text"
+          className="form-control"
           value={this.state.message}
           onChange={e => this.setState({ message: e.target.value })}
         />
-        <button type="submit" className="btn btn-success pull-right">
+        <button type="submit" className="btn btn-success">
           Add my message!
         </button>
       </form>
@@ -41,4 +37,9 @@ function mapStateToProps(state){
   }
 }
 
+function mapStateToProps(state){
+  return {
+    errors: state.errors
+  };
+}
 export default connect(mapStateToProps, {postNewMessage})(MessageForm);
