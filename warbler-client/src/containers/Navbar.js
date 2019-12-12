@@ -13,13 +13,13 @@ class Navbar extends Component {
     return(
       <nav className="navbar navbar-expand">
         <div className="container-fluid">
-          <div className="navbarheader">
+          <div className="navbar-header">
             <Link to="/" className="navbar-brand">
               <img src={Logo} alt="Warbler Home" />
             </Link>
           </div>
           {this.props.currentUser.isAuthenticated ? (
-            <ul className="nav-navbar-nav navbar-right">
+            <ul className="nav navbar-nav navbar-right">
               <li>
                 <Link to={`/users/${this.props.currentUser.user.id}/messages/new`}>
                   New Message
